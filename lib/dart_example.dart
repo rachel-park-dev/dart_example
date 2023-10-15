@@ -69,3 +69,23 @@ int fun3() {
   }
   return count;
 }
+
+/// 비동기 프로그래밍 - Future
+Future<void> todo(int sec) async {
+  await Future.delayed(Duration(seconds: sec));
+  print(' Todo Done in $sec seconds');
+}
+
+/// 비동기 프로그래밍 - Stream
+Stream<int> todo2() async* {
+  int counter = 0;
+
+  while (counter <= 10) {
+    counter++;
+    await Future.delayed(Duration(seconds: 1));
+    print('Todo is Working $counter');
+    yield counter; //yield : return과 비슷한 역할을 한다. (return 객체를 수시로 전달함)
+  }
+
+  print('Todo is Done');
+}

@@ -54,3 +54,18 @@ String fun2() {
 
   return res;
 }
+
+//while문
+int fun3() {
+  bool isRunning = true;
+  int count = 0;
+
+  while (isRunning) {
+    if (count >= 5) {
+      isRunning = false;
+    }
+    count++;
+    print('While is Running $count');
+  }
+  return count;
+}
